@@ -44,14 +44,39 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preiss: 35 EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-xC-Vhn">
-                        <rect key="frame" x="100" y="95" width="83.5" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preiss: 355555 EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-xC-Vhn">
+                        <rect key="frame" x="100" y="95" width="113.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wam-ZZ-IbA" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="223" y="93.5" width="85" height="17"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="Ii9-MH-CLs"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                <real key="value" value="17"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Wam-ZZ-IbA" secondAttribute="trailing" constant="12" id="0q1-Lu-oJz"/>
                     <constraint firstItem="h16-eY-a0H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="3yA-sI-jbm"/>
                     <constraint firstItem="YWL-lc-nlf" firstAttribute="leading" secondItem="h16-eY-a0H" secondAttribute="leading" id="6tY-ek-4Io"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ENo-xC-Vhn" secondAttribute="bottom" constant="8" id="BDy-lR-KZa"/>
@@ -61,6 +86,7 @@
                     <constraint firstItem="YWL-lc-nlf" firstAttribute="trailing" secondItem="A47-Y5-ndl" secondAttribute="trailing" id="SLD-AM-kzi"/>
                     <constraint firstItem="LP0-ev-3HM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="YtV-rx-AHc"/>
                     <constraint firstItem="ENo-xC-Vhn" firstAttribute="leading" secondItem="YWL-lc-nlf" secondAttribute="leading" id="Zlq-Qm-BeB"/>
+                    <constraint firstItem="Wam-ZZ-IbA" firstAttribute="centerY" secondItem="ENo-xC-Vhn" secondAttribute="centerY" id="f36-Jo-W1Z"/>
                     <constraint firstItem="h16-eY-a0H" firstAttribute="top" secondItem="LP0-ev-3HM" secondAttribute="top" id="fLL-QR-XYZ"/>
                     <constraint firstItem="YWL-lc-nlf" firstAttribute="top" secondItem="h16-eY-a0H" secondAttribute="bottom" constant="8" id="h6Q-Oe-jag"/>
                     <constraint firstItem="ENo-xC-Vhn" firstAttribute="top" secondItem="YWL-lc-nlf" secondAttribute="bottom" constant="8" id="qlE-NY-B59"/>

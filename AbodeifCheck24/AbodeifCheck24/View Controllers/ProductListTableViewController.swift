@@ -37,7 +37,6 @@ class ProductListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("returning number of cells")
         return 10
     }
 
