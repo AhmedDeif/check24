@@ -13,7 +13,11 @@ import AlamofireImage
 class NetworkManager: APIProtocol {
     
     func getPorducts() {
-        
+        Alamofire.request(EndPoints.getProducts)
+            .responseData { response in
+                let decoder = JSONDecoder()
+                let productListResponse: Result<GetProductListResponse> = decoder.decodeResponse(from: response)
+        }
     }
     
     func getImage() {

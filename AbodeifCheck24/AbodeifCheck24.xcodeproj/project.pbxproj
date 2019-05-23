@@ -28,6 +28,10 @@
 		4204A0AA2296978000D5124D /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A92296978000D5124D /* APIProtocol.swift */; };
 		4204A0AC2296999000D5124D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0AB2296999000D5124D /* NetworkError.swift */; };
 		4204A0AE22969A9100D5124D /* API_Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0AD22969A9100D5124D /* API_Endpoints.swift */; };
+		4204A0B122969BC400D5124D /* GetProductListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B022969BC400D5124D /* GetProductListResponse.swift */; };
+		4204A0B322969C2200D5124D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B222969C2200D5124D /* Product.swift */; };
+		4204A0B522969C7100D5124D /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B422969C7100D5124D /* ProductPrice.swift */; };
+		4204A0B722969CEB00D5124D /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B622969CEB00D5124D /* ListHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		4204A0A92296978000D5124D /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		4204A0AB2296999000D5124D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4204A0AD22969A9100D5124D /* API_Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Endpoints.swift; sourceTree = "<group>"; };
+		4204A0B022969BC400D5124D /* GetProductListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductListResponse.swift; sourceTree = "<group>"; };
+		4204A0B222969C2200D5124D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		4204A0B422969C7100D5124D /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
+		4204A0B622969CEB00D5124D /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		5290BC8ED232ADAC6385BB12 /* Pods_AbodeifCheck24Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BCC422EFDF9FE259E7D905 /* Pods_AbodeifCheck24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C704042D8B53D361124C77 /* Pods-AbodeifCheck24Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbodeifCheck24Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbodeifCheck24Tests/Pods-AbodeifCheck24Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +188,10 @@
 		4204A0852296855800D5124D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4204A0AF22969BA300D5124D /* API Response Models */,
+				4204A0B222969C2200D5124D /* Product.swift */,
+				4204A0B422969C7100D5124D /* ProductPrice.swift */,
+				4204A0B622969CEB00D5124D /* ListHeader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +256,14 @@
 				4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */,
 			);
 			path = ProductListTable;
+			sourceTree = "<group>";
+		};
+		4204A0AF22969BA300D5124D /* API Response Models */ = {
+			isa = PBXGroup;
+			children = (
+				4204A0B022969BC400D5124D /* GetProductListResponse.swift */,
+			);
+			path = "API Response Models";
 			sourceTree = "<group>";
 		};
 		A910BE3EC2EC7771BF82B651 /* Frameworks */ = {
@@ -447,6 +467,10 @@
 				4204A08F229688DD00D5124D /* ProductListTableViewController.swift in Sources */,
 				4204A0A322968AB300D5124D /* FavoriteProductTableViewCell.swift in Sources */,
 				4204A0AC2296999000D5124D /* NetworkError.swift in Sources */,
+				4204A0B522969C7100D5124D /* ProductPrice.swift in Sources */,
+				4204A0B122969BC400D5124D /* GetProductListResponse.swift in Sources */,
+				4204A0B722969CEB00D5124D /* ListHeader.swift in Sources */,
+				4204A0B322969C2200D5124D /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
