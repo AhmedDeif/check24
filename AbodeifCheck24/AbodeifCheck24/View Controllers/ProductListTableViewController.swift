@@ -59,10 +59,12 @@ class ProductListTableViewController: UITableViewController {
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: productCellIdentifier, for: indexPath) as!
             ProductTableViewCell
+            cell.setCellData(withProduct: productList[indexPath.row])
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: favoriteProductCellIdentifer, for: indexPath) as! FavoriteProductTableViewCell
+            cell.setCellData(withProduct: productList[indexPath.row])
             return cell
         }
     }

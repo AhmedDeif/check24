@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Cosmos
 
 class ProductTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var ratingsView: CosmosView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +26,17 @@ class ProductTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+    func setCellData(withProduct: Product) {
+        productNameLabel.text = withProduct.name ?? "ProductName"
+        releaseDateLabel.text = String(withProduct.releaseDate ?? 10101)
+        descriptionLabel.text = withProduct.productDescription ?? "Product description"
+        priceLabel.text = String(withProduct.price?.value ?? 0.0) + (withProduct.price?.currency ?? "EUR")
+        ratingsView.rating = withProduct.rating ?? 3
+        
+        // ToDo: Load product Image
+    }
+    
     
 }

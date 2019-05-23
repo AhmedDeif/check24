@@ -26,32 +26,35 @@
                             <constraint firstAttribute="height" constant="80" id="L2T-dw-Wp5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h16-eY-a0H">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h16-eY-a0H">
                         <rect key="frame" x="100" y="19" width="40" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28/05/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A47-Y5-ndl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="28/05/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A47-Y5-ndl">
                         <rect key="frame" x="240.5" y="23" width="55.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWL-lc-nlf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWL-lc-nlf">
                         <rect key="frame" x="100" y="44" width="196" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preiss: 355555 EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-xC-Vhn">
-                        <rect key="frame" x="100" y="95" width="113.5" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Preiss: 355555 EUR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-xC-Vhn">
+                        <rect key="frame" x="100" y="95" width="115" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="DDT-h6-Bxe"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wam-ZZ-IbA" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="223" y="93.5" width="85" height="17"/>
+                        <rect key="frame" x="223" y="94.5" width="85" height="17"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="85" id="Ii9-MH-CLs"/>
@@ -78,6 +81,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Wam-ZZ-IbA" secondAttribute="trailing" constant="12" id="0q1-Lu-oJz"/>
                     <constraint firstItem="h16-eY-a0H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="3yA-sI-jbm"/>
+                    <constraint firstItem="Wam-ZZ-IbA" firstAttribute="leading" secondItem="ENo-xC-Vhn" secondAttribute="trailing" constant="8" id="5yJ-3r-A3t"/>
                     <constraint firstItem="YWL-lc-nlf" firstAttribute="leading" secondItem="h16-eY-a0H" secondAttribute="leading" id="6tY-ek-4Io"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ENo-xC-Vhn" secondAttribute="bottom" constant="8" id="BDy-lR-KZa"/>
                     <constraint firstItem="A47-Y5-ndl" firstAttribute="firstBaseline" secondItem="h16-eY-a0H" secondAttribute="firstBaseline" id="FH7-20-Nwr"/>
@@ -94,6 +98,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="YWL-lc-nlf" id="D6Y-Oo-vAC"/>
+                <outlet property="priceLabel" destination="ENo-xC-Vhn" id="UlN-sz-fjx"/>
+                <outlet property="productImage" destination="LP0-ev-3HM" id="ybH-d3-SuB"/>
+                <outlet property="productNameLabel" destination="h16-eY-a0H" id="CgJ-jO-kyA"/>
+                <outlet property="ratingsView" destination="Wam-ZZ-IbA" id="g08-Rk-Ktl"/>
+                <outlet property="releaseDateLabel" destination="A47-Y5-ndl" id="xMM-lR-bB5"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="195.6521739130435"/>
         </tableViewCell>
     </objects>

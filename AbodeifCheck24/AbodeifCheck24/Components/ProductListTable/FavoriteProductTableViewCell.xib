@@ -71,13 +71,19 @@
                     <constraint firstItem="bLB-Gw-P0S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Koy-4g-K3T"/>
                     <constraint firstItem="gjh-om-nos" firstAttribute="top" secondItem="TPH-ai-Qo9" secondAttribute="bottom" constant="8" id="cMe-A4-0UH"/>
                     <constraint firstItem="TPH-ai-Qo9" firstAttribute="top" secondItem="m7b-Xg-6pJ" secondAttribute="bottom" constant="8" id="e33-iw-EJd"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="gjh-om-nos" secondAttribute="bottom" constant="12" id="e6E-Vm-rZq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gjh-om-nos" secondAttribute="bottom" constant="20" id="e6E-Vm-rZq"/>
                     <constraint firstItem="m7b-Xg-6pJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="mGb-VJ-ZOm"/>
                     <constraint firstItem="TPH-ai-Qo9" firstAttribute="leading" secondItem="m7b-Xg-6pJ" secondAttribute="leading" id="pKI-hg-pxS"/>
                     <constraint firstItem="gjh-om-nos" firstAttribute="leading" secondItem="m7b-Xg-6pJ" secondAttribute="leading" id="toI-EH-JWE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productDescriptionLabel" destination="TPH-ai-Qo9" id="O3N-cu-j7b"/>
+                <outlet property="productImage" destination="bLB-Gw-P0S" id="zVN-Ll-7OS"/>
+                <outlet property="productNameLabel" destination="m7b-Xg-6pJ" id="fW3-rE-kRV"/>
+                <outlet property="ratingsView" destination="gjh-om-nos" id="tAc-B0-hqs"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="192.05397301349328"/>
         </tableViewCell>
     </objects>
