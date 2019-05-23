@@ -10,8 +10,8 @@ import Foundation
 
 
 protocol APIProtocol {
-    
-    func getPorducts()
-    func getImage()
+
+    func getPorducts(completion: @escaping(_ error: NetworkError?, _ data: GetProductListResponse?)->())
+    func getImage(completion: ())
     
 }

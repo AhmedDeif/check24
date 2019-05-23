@@ -15,13 +15,14 @@ class ProductListTableViewController: UITableViewController {
     let productCellIdentifier = "ProductTableViewCell"
     let favoriteProductCellIdentifer = "FavoriteProductTableViewCell"
     let filterHeaderViewIdentifier = "ProductListFilterHeader"
+    let viewModel: ProductListViewModel = ProductListViewModel()
+    var productList: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let manager = NetworkManager()
-        manager.getPorducts()
         registerTableViewCells()
+        viewModelSetup()
+        viewModel.getProducts()
     }
 
     func registerTableViewCells() {
@@ -30,13 +31,26 @@ class ProductListTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: filterHeaderViewIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: filterHeaderViewIdentifier)
     }
     
+    func viewModelSetup() {
+        viewModel.onProductListFetchSuccess = {
+            self.productList = self.viewModel.productList
+            self.tableView.reloadData()
+        }
+        // ToDo: implement onFetchFailure Handler
+    }
+    
+    
+    func loadProducts() {
+        viewModel.getProducts()
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.productList.count
     }
 
     

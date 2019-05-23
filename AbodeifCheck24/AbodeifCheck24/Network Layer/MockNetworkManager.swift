@@ -11,11 +11,11 @@ import Foundation
 
 class MockNetworkManager: APIProtocol {
     
-    func getPorducts() {
+    func getPorducts(completion: @escaping(_ error: NetworkError?, _ data: GetProductListResponse?)->()) {
         // should fetch mocked api response
     }
     
-    func getImage() {
+    func getImage(completion: ()) {
         // should fetch mocked api response
     }
     

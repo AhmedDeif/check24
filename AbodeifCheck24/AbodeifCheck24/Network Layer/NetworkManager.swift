@@ -10,17 +10,29 @@ import Foundation
 import Alamofire
 import AlamofireImage
 
-class NetworkManager: APIProtocol {
+class NetworkManager {
     
-    func getPorducts() {
+    func getPorducts(completion: @escaping (_ error: NetworkError?, _ data: GetProductListResponse?)->()) {
         Alamofire.request(EndPoints.getProducts)
             .responseData { response in
-                let decoder = JSONDecoder()
-                let productListResponse: Result<GetProductListResponse> = decoder.decodeResponse(from: response)
+                switch response.result {
+                case .success:
+                    let decoder = JSONDecoder()
+                    let responseObject: Result<GetProductListResponse> = decoder.decodeResponse(from: response)
+                    guard let data = responseObject.value else {
+                        print("empty response")
+                        completion(NetworkError.noDataInResponse, nil)
+                        return
+                    }
+                    completion(nil, data)
+                case .failure(let error):
+                    print(error)
+                    completion(NetworkError.serverError, nil)
+                }
         }
     }
     
-    func getImage() {
+    func getImage(completion: ()) {
         // should fetch make api call
     }
     
@@ -36,7 +48,6 @@ extension JSONDecoder {
         }
         
         guard let responseData = response.data else {
-            print("didn't get any data from API")
             return .failure(NetworkError.noDataInResponse)
         }
         
@@ -46,7 +57,7 @@ extension JSONDecoder {
         } catch {
             print("error trying to decode response")
             print(error)
-            return .failure(error)
+            return .failure(NetworkError.malformedResponse)
         }
     }
 }
