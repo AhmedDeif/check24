@@ -7,47 +7,47 @@
 //
 
 import UIKit
-import WebKit
+import Cosmos
 
-class ProductDetailsViewController: UIViewController, WKNavigationDelegate {
 
-    var webView: WKWebView!
+class ProductDetailsViewController: UIViewController {
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productPriceLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var productRatinfsView: CosmosView!
+    @IBOutlet weak var productReleaseDate: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var productShortDescriptionLabel: UILabel!
+    @IBOutlet weak var productLongDescriptionLabel: UILabel!
     
-    override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-    }
+    var product: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 1
-        let url = URL(string: "https://m.check24.de/rechtliche-hinweise/?deviceoutput=app")!
-        webView.load(URLRequest(url: url))
-        
-        // 2
-        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
-        toolbarItems = [refresh]
-        navigationController?.isToolbarHidden = false
-
-        // Do any additional setup after loading the view.
+        setData()
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        title = webView.title
-    }
-    
+    func setData() {
+        if let myProduct = product {
+            productPriceLabel.text = String(myProduct.price?.value ?? 0.0) + " " + (myProduct.price?.currency ?? "myProduct")
+            productNameLabel.text = myProduct.name ?? "ProductName"
+            productReleaseDate.text = String(myProduct.releaseDate ?? 10101)
+            productShortDescriptionLabel.text = myProduct.productDescription ?? "Product description"
+            productRatinfsView.rating = myProduct.rating ?? 3
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            productLongDescriptionLabel.text = myProduct.longDescription ?? "Long description"
+            // This image is already cached by alamofire
+            NetworkManager.shared().getImage(imageUrl: myProduct.imageURL ?? "") { (error, image) in
+                if error != nil {
+                    // ToDo: handle image loading error
+                }
+                else {
+                    self.productImageView.image = image!
+                }
+            }
+        }
     }
-    */
+  
     
     @IBAction func didTapFooter(_ sender: Any) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

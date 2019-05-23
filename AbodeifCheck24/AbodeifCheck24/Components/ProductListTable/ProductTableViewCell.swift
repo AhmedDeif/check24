@@ -40,7 +40,7 @@ class ProductTableViewCell: UITableViewCell {
         productNameLabel.text = withProduct.name ?? "ProductName"
         releaseDateLabel.text = String(withProduct.releaseDate ?? 10101)
         descriptionLabel.text = withProduct.productDescription ?? "Product description"
-        priceLabel.text = String(withProduct.price?.value ?? 0.0) + (withProduct.price?.currency ?? "EUR")
+        priceLabel.text = String(withProduct.price?.value ?? 0.0) + " " + (withProduct.price?.currency ?? "EUR")
         ratingsView.rating = withProduct.rating ?? 3
         startLoading()
         NetworkManager.shared().downloadCellImage(imageUrl: withProduct.imageURL ?? "", index: index) { (error, image, index) in

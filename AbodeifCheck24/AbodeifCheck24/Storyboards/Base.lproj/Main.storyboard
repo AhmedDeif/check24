@@ -204,6 +204,16 @@
                         <viewLayoutGuide key="safeArea" id="yTN-Wk-7p0"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="gii-57-cf6" id="3TO-Qu-JcW"/>
+                        <outlet property="productImageView" destination="c6D-ep-eZQ" id="Hrc-JL-AXi"/>
+                        <outlet property="productLongDescriptionLabel" destination="eh9-eP-bI1" id="Uf5-xw-deZ"/>
+                        <outlet property="productNameLabel" destination="ybU-QK-xEm" id="Isw-ug-wcA"/>
+                        <outlet property="productPriceLabel" destination="lzt-Cq-xZf" id="nDi-CC-6P0"/>
+                        <outlet property="productRatinfsView" destination="8yP-2F-SCa" id="pmz-EJ-zoi"/>
+                        <outlet property="productReleaseDate" destination="euA-GR-hqY" id="PIy-eh-4RC"/>
+                        <outlet property="productShortDescriptionLabel" destination="CYb-1E-6sy" id="8zl-U9-xb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPR-B1-nbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

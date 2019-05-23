@@ -49,9 +49,10 @@ class ProductListTableViewController: UITableViewController {
         viewModel.getProducts()
     }
     
-    func pushProductDetailsView() {
+    func pushProductDetailsView(withProduct: Product) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        vc.product = withProduct
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -87,7 +88,7 @@ class ProductListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushProductDetailsView()
+        pushProductDetailsView(withProduct: productList[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
