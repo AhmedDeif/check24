@@ -34,6 +34,7 @@
 		4204A0B722969CEB00D5124D /* ListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B622969CEB00D5124D /* ListHeader.swift */; };
 		4204A0B922969E5D00D5124D /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0B822969E5D00D5124D /* ProductViewModel.swift */; };
 		4204A0BB22969E6900D5124D /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0BA22969E6900D5124D /* ProductListViewModel.swift */; };
+		4204A0BF2296AFE000D5124D /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0BE2296AFE000D5124D /* ProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		4204A0B622969CEB00D5124D /* ListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeader.swift; sourceTree = "<group>"; };
 		4204A0B822969E5D00D5124D /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		4204A0BA22969E6900D5124D /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		4204A0BE2296AFE000D5124D /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		5290BC8ED232ADAC6385BB12 /* Pods_AbodeifCheck24Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BCC422EFDF9FE259E7D905 /* Pods_AbodeifCheck24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C704042D8B53D361124C77 /* Pods-AbodeifCheck24Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbodeifCheck24Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbodeifCheck24Tests/Pods-AbodeifCheck24Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4204A08E229688DD00D5124D /* ProductListTableViewController.swift */,
+				4204A0BE2296AFE000D5124D /* ProductDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				4204A0B122969BC400D5124D /* GetProductListResponse.swift in Sources */,
 				4204A0B722969CEB00D5124D /* ListHeader.swift in Sources */,
 				4204A0B922969E5D00D5124D /* ProductViewModel.swift in Sources */,
+				4204A0BF2296AFE000D5124D /* ProductDetailsViewController.swift in Sources */,
 				4204A0BB22969E6900D5124D /* ProductListViewModel.swift in Sources */,
 				4204A0B322969C2200D5124D /* Product.swift in Sources */,
 			);

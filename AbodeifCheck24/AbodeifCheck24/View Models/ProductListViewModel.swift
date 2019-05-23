@@ -36,6 +36,16 @@ class ProductListViewModel {
     }
     
     
+    func filterAvailableProducts() {
+        
+    }
+    
+    
+    func filterFavoriteProducts() {
+        
+    }
+    
+    
     func onSuccess() {
         self.networkRequestInProgess = false
         self.onProductListFetchSuccess?()

@@ -49,6 +49,12 @@ class ProductListTableViewController: UITableViewController {
         viewModel.getProducts()
     }
     
+    func pushProductDetailsView() {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -78,8 +84,13 @@ class ProductListTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushProductDetailsView()
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: filterHeaderViewIdentifier) as! ProductListFilterHeader
+        // pass viewModel filter functions here 
         return headerView
     }
     
