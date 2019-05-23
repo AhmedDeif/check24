@@ -61,11 +61,15 @@ class ProductListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row % 2 == 0 {
+        // ToDo: pass this control to viewModel in order to achieve complete seperation
+        let productAvailable = productList[indexPath.row].available ?? false
+    
+        if productAvailable {
             let cell = tableView.dequeueReusableCell(withIdentifier: productCellIdentifier, for: indexPath) as!
             ProductTableViewCell
             cell.setCellData(withProduct: productList[indexPath.row])
             return cell
+
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: favoriteProductCellIdentifer, for: indexPath) as! FavoriteProductTableViewCell

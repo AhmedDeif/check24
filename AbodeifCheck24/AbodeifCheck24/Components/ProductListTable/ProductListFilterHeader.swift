@@ -9,6 +9,11 @@
 import UIKit
 
 class ProductListFilterHeader: UITableViewHeaderFooterView {
-
     
+    @IBAction func didTapFilter(_ sender: UISegmentedControl) {
+        print(sender.titleForSegment(at: sender.selectedSegmentIndex))
+    }
+    
+    
+   
 }
