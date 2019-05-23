@@ -23,6 +23,11 @@
 		4204A0A022968AA300D5124D /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A09E22968AA300D5124D /* ProductTableViewCell.xib */; };
 		4204A0A322968AB300D5124D /* FavoriteProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A122968AB300D5124D /* FavoriteProductTableViewCell.swift */; };
 		4204A0A422968AB300D5124D /* FavoriteProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */; };
+		4204A0A62296975700D5124D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A52296975700D5124D /* NetworkManager.swift */; };
+		4204A0A82296976400D5124D /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A72296976400D5124D /* MockNetworkManager.swift */; };
+		4204A0AA2296978000D5124D /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A92296978000D5124D /* APIProtocol.swift */; };
+		4204A0AC2296999000D5124D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0AB2296999000D5124D /* NetworkError.swift */; };
+		4204A0AE22969A9100D5124D /* API_Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0AD22969A9100D5124D /* API_Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,11 @@
 		4204A09E22968AA300D5124D /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		4204A0A122968AB300D5124D /* FavoriteProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductTableViewCell.swift; sourceTree = "<group>"; };
 		4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteProductTableViewCell.xib; sourceTree = "<group>"; };
+		4204A0A52296975700D5124D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4204A0A72296976400D5124D /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		4204A0A92296978000D5124D /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		4204A0AB2296999000D5124D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		4204A0AD22969A9100D5124D /* API_Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Endpoints.swift; sourceTree = "<group>"; };
 		5290BC8ED232ADAC6385BB12 /* Pods_AbodeifCheck24Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BCC422EFDF9FE259E7D905 /* Pods_AbodeifCheck24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbodeifCheck24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C704042D8B53D361124C77 /* Pods-AbodeifCheck24Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbodeifCheck24Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbodeifCheck24Tests/Pods-AbodeifCheck24Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +169,10 @@
 		4204A0842296854C00D5124D /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				4204A0A52296975700D5124D /* NetworkManager.swift */,
+				4204A0A72296976400D5124D /* MockNetworkManager.swift */,
+				4204A0A92296978000D5124D /* APIProtocol.swift */,
+				4204A0AB2296999000D5124D /* NetworkError.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -205,6 +219,7 @@
 		4204A08A2296858600D5124D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				4204A0AD22969A9100D5124D /* API_Endpoints.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -375,12 +390,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AbodeifCheck24/Pods-AbodeifCheck24-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,11 +437,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4204A0912296894D00D5124D /* ProductListFilterHeader.swift in Sources */,
+				4204A0A82296976400D5124D /* MockNetworkManager.swift in Sources */,
 				4204A0632296850A00D5124D /* AppDelegate.swift in Sources */,
 				4204A09F22968AA300D5124D /* ProductTableViewCell.swift in Sources */,
+				4204A0AA2296978000D5124D /* APIProtocol.swift in Sources */,
+				4204A0A62296975700D5124D /* NetworkManager.swift in Sources */,
 				4204A09722968A1B00D5124D /* ProductListFooter.swift in Sources */,
+				4204A0AE22969A9100D5124D /* API_Endpoints.swift in Sources */,
 				4204A08F229688DD00D5124D /* ProductListTableViewController.swift in Sources */,
 				4204A0A322968AB300D5124D /* FavoriteProductTableViewCell.swift in Sources */,
+				4204A0AC2296999000D5124D /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

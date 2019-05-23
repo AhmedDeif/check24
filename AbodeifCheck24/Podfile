@@ -7,6 +7,8 @@ target 'AbodeifCheck24' do
 	
   # Pods for AbodeifCheck24
   pod 'Cosmos', '~> 19.0'
+  pod 'Alamofire', '~> 4.8'
+  pod 'AlamofireImage', '~> 3.5'
 
   target 'AbodeifCheck24Tests' do
     inherit! :search_paths
