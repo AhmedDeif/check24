@@ -9,6 +9,7 @@ target 'AbodeifCheck24' do
   pod 'Cosmos', '~> 19.0'
   pod 'Alamofire', '~> 4.8'
   pod 'AlamofireImage', '~> 3.5'
+  pod 'NVActivityIndicatorView', '~> 4.6.1'
 
   target 'AbodeifCheck24Tests' do
     inherit! :search_paths

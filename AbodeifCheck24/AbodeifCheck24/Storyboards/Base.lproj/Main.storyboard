@@ -40,6 +40,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Check 24" id="xfH-hL-nMT"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="vdL-8v-NDh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkN-QN-hUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
+
 
 class ProductListTableViewController: UITableViewController {
     
@@ -17,13 +19,15 @@ class ProductListTableViewController: UITableViewController {
     let filterHeaderViewIdentifier = "ProductListFilterHeader"
     let viewModel: ProductListViewModel = ProductListViewModel()
     var productList: [Product] = []
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
         styleTableView()
         viewModelSetup()
-        viewModel.getProducts()
+        loadProducts()
+        
     }
 
     func registerTableViewCells() {
@@ -38,14 +42,21 @@ class ProductListTableViewController: UITableViewController {
     
     func viewModelSetup() {
         viewModel.onProductListFetchSuccess = {
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
             self.productList = self.viewModel.productList
             self.tableView.reloadData()
         }
         // ToDo: implement onFetchFailure Handler
+        viewModel.onProductListFetchFaild = { error in
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+        }
+        
     }
     
     
     func loadProducts() {
+        let activityData = ActivityData()
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
         viewModel.getProducts()
     }
     
