@@ -38,7 +38,13 @@ class ProductTableViewCell: UITableViewCell {
     
     func setCellData(withProduct: Product, index: Int) {
         productNameLabel.text = withProduct.name ?? "ProductName"
-        releaseDateLabel.text = String(withProduct.releaseDate ?? 10101)
+        let date = Date(timeIntervalSince1970: Double(withProduct.releaseDate ?? 1480134638))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let strDate = dateFormatter.string(from: date)
+        releaseDateLabel.text = strDate
         descriptionLabel.text = withProduct.productDescription ?? "Product description"
         priceLabel.text = String(withProduct.price?.value ?? 0.0) + " " + (withProduct.price?.currency ?? "EUR")
         ratingsView.rating = withProduct.rating ?? 3

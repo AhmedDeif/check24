@@ -31,7 +31,14 @@ class ProductDetailsViewController: UIViewController {
         if let myProduct = product {
             productPriceLabel.text = String(myProduct.price?.value ?? 0.0) + " " + (myProduct.price?.currency ?? "myProduct")
             productNameLabel.text = myProduct.name ?? "ProductName"
-            productReleaseDate.text = String(myProduct.releaseDate ?? 10101)
+            
+            let date = Date(timeIntervalSince1970: Double(myProduct.releaseDate ?? 1480134638))
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.locale = NSLocale.current
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let strDate = dateFormatter.string(from: date)
+            productReleaseDate.text = strDate
             productShortDescriptionLabel.text = myProduct.productDescription ?? "Product description"
             productRatinfsView.rating = myProduct.rating ?? 3
 
