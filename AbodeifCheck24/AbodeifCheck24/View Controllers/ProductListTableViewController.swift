@@ -9,7 +9,12 @@
 import UIKit
 
 class ProductListTableViewController: UITableViewController {
-
+    
+    
+    // The identifiers below must have the same name as nib names in Component/ProductListTable
+    let productCellIdentifier = "ProductTableViewCell"
+    let favoriteProductCellIdentifer = "FavoriteProductTableViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,29 +23,38 @@ class ProductListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        registerTableViewCells()
     }
 
+    func registerTableViewCells() {
+        self.tableView.register(UINib(nibName: productCellIdentifier, bundle: nil), forCellReuseIdentifier: productCellIdentifier)
+        self.tableView.register(UINib(nibName: favoriteProductCellIdentifer, bundle: nil), forCellReuseIdentifier: favoriteProductCellIdentifer)
+    }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("returning number of cells")
+        return 10
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        if indexPath.row % 2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: productCellIdentifier, for: indexPath) as!
+            ProductTableViewCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: favoriteProductCellIdentifer, for: indexPath) as! FavoriteProductTableViewCell
+            return cell
+        }
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
