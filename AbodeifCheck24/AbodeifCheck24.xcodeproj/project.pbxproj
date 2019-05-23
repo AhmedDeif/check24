@@ -17,6 +17,10 @@
 		4204A0932296895A00D5124D /* ProductListFilterHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A0922296895A00D5124D /* ProductListFilterHeader.xib */; };
 		4204A09522968A0800D5124D /* ProductListFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A09422968A0800D5124D /* ProductListFooter.xib */; };
 		4204A09722968A1B00D5124D /* ProductListFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A09622968A1B00D5124D /* ProductListFooter.swift */; };
+		4204A09F22968AA300D5124D /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A09D22968AA300D5124D /* ProductTableViewCell.swift */; };
+		4204A0A022968AA300D5124D /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A09E22968AA300D5124D /* ProductTableViewCell.xib */; };
+		4204A0A322968AB300D5124D /* FavoriteProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4204A0A122968AB300D5124D /* FavoriteProductTableViewCell.swift */; };
+		4204A0A422968AB300D5124D /* FavoriteProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		4204A0922296895A00D5124D /* ProductListFilterHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListFilterHeader.xib; sourceTree = "<group>"; };
 		4204A09422968A0800D5124D /* ProductListFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListFooter.xib; sourceTree = "<group>"; };
 		4204A09622968A1B00D5124D /* ProductListFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListFooter.swift; sourceTree = "<group>"; };
+		4204A09D22968AA300D5124D /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		4204A09E22968AA300D5124D /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		4204A0A122968AB300D5124D /* FavoriteProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductTableViewCell.swift; sourceTree = "<group>"; };
+		4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteProductTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,10 @@
 				4204A0922296895A00D5124D /* ProductListFilterHeader.xib */,
 				4204A09622968A1B00D5124D /* ProductListFooter.swift */,
 				4204A09422968A0800D5124D /* ProductListFooter.xib */,
+				4204A09D22968AA300D5124D /* ProductTableViewCell.swift */,
+				4204A09E22968AA300D5124D /* ProductTableViewCell.xib */,
+				4204A0A122968AB300D5124D /* FavoriteProductTableViewCell.swift */,
+				4204A0A222968AB300D5124D /* FavoriteProductTableViewCell.xib */,
 			);
 			path = ProductListTable;
 			sourceTree = "<group>";
@@ -278,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4204A0932296895A00D5124D /* ProductListFilterHeader.xib in Resources */,
+				4204A0A022968AA300D5124D /* ProductTableViewCell.xib in Resources */,
+				4204A0A422968AB300D5124D /* FavoriteProductTableViewCell.xib in Resources */,
 				4204A06D2296850B00D5124D /* LaunchScreen.storyboard in Resources */,
 				4204A06A2296850B00D5124D /* Assets.xcassets in Resources */,
 				4204A0682296850A00D5124D /* Main.storyboard in Resources */,
@@ -301,8 +315,10 @@
 			files = (
 				4204A0912296894D00D5124D /* ProductListFilterHeader.swift in Sources */,
 				4204A0632296850A00D5124D /* AppDelegate.swift in Sources */,
+				4204A09F22968AA300D5124D /* ProductTableViewCell.swift in Sources */,
 				4204A09722968A1B00D5124D /* ProductListFooter.swift in Sources */,
 				4204A08F229688DD00D5124D /* ProductListTableViewController.swift in Sources */,
+				4204A0A322968AB300D5124D /* FavoriteProductTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
