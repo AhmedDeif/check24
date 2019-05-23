@@ -21,6 +21,7 @@ class ProductListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
+        styleTableView()
         viewModelSetup()
         viewModel.getProducts()
     }
@@ -29,6 +30,10 @@ class ProductListTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: productCellIdentifier, bundle: nil), forCellReuseIdentifier: productCellIdentifier)
         self.tableView.register(UINib(nibName: favoriteProductCellIdentifer, bundle: nil), forCellReuseIdentifier: favoriteProductCellIdentifer)
         self.tableView.register(UINib(nibName: filterHeaderViewIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: filterHeaderViewIdentifier)
+    }
+    
+    func styleTableView() {
+        tableView.separatorStyle = .none
     }
     
     func viewModelSetup() {

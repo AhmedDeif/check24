@@ -17,17 +17,24 @@ class FavoriteProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
-
+    @IBOutlet weak var containerView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        addBorder()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func addBorder() {
+        containerView.layer.borderColor = UIColor.gray.cgColor
+        containerView.layer.borderWidth = 1
+        containerView.layer.cornerRadius = 5
     }
     
     func setCellData(withProduct: Product) {
