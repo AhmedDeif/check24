@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MsP-zD-Npx">
                         <rect key="frame" x="8" y="8" width="330" height="150"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-Gw-P0S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-Gw-P0S">
                                 <rect key="frame" x="230" y="28" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9Ef-1G-sG1"/>
@@ -100,7 +100,4 @@
             <point key="canvasLocation" x="158.40000000000001" y="210.04497751124438"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="triangle" width="90" height="90"/>
-    </resources>
 </document>

@@ -18,6 +18,8 @@ class FavoriteProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
+    var indexPath:IndexPath!
+    let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
     
     
     override func awakeFromNib() {
@@ -27,8 +29,12 @@ class FavoriteProductTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        self.imageView?.image = nil
     }
     
     func addBorder() {
@@ -37,13 +43,38 @@ class FavoriteProductTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 5
     }
     
-    func setCellData(withProduct: Product) {
+    func setCellData(withProduct: Product, index: Int) {
         productNameLabel.text = withProduct.name ?? "Product Name"
         productDescriptionLabel.text = withProduct.productDescription ?? "Product Description"
         ratingsView.rating = withProduct.rating ?? 3
-
-        
-        // ToDo: Load product Image
+        startLoading()
+        NetworkManager.shared().downloadCellImage(imageUrl: withProduct.imageURL ?? "", index: index) { (error, image, index) in
+            if let downloadedImage = image {
+                DispatchQueue.main.async {
+                    self.stopLoading()
+                    guard let index = index else {
+                        print("bad index")
+                        return
+                    }
+                    if (self.indexPath.row == index) {
+                        self.productImage?.image = downloadedImage
+                    }
+                    
+                }
+            }
+        }
     }
     
+    func startLoading() {
+        activityIndicator.center = self.productImage.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.style = UIActivityIndicatorView.Style.gray;
+        self.containerView.addSubview(activityIndicator)
+    }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+    }
+
 }
+

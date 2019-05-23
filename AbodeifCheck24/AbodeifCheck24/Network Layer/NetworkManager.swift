@@ -12,6 +12,16 @@ import AlamofireImage
 
 class NetworkManager {
     
+    
+    private static var sharedManager:NetworkManager = {
+        return NetworkManager()
+    }()
+    
+    static func shared() -> NetworkManager {
+        return sharedManager
+    }
+
+    
     func getPorducts(completion: @escaping (_ error: NetworkError?, _ data: GetProductListResponse?)->()) {
         Alamofire.request(EndPoints.getProducts)
             .responseData { response in
@@ -32,8 +42,37 @@ class NetworkManager {
         }
     }
     
-    func getImage(completion: ()) {
-        // should fetch make api call
+    func getImage(imageUrl: String, completion: @escaping (_ error: NetworkError?, _ image: UIImage?)->()) {
+        Alamofire.request(imageUrl).responseImage { response in
+            switch response.result {
+            case .success:
+                if let image = response.result.value {
+                    completion(nil, image)
+                }
+                else {
+                    completion(NetworkError.badImageURL(imageUrl), nil)
+                }
+            case .failure(_):
+                completion(NetworkError.badImageURL(imageUrl), nil)
+            }
+        }
+    }
+    
+    func downloadCellImage(imageUrl: String, index: Int, completion: @escaping (_ error: NetworkError?, _ image: UIImage?, _ index: Int?)->()) {
+        Alamofire.request(imageUrl).responseImage { response in
+            switch response.result {
+            case .success:
+                if let image = response.result.value {
+                    completion(nil, image, index)
+                }
+                else {
+                    completion(NetworkError.badImageURL(imageUrl), nil, nil)
+                }
+            case .failure(_):
+                completion(NetworkError.badImageURL(imageUrl), nil, nil)
+            }
+        }
+
     }
     
     
