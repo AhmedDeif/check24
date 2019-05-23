@@ -1,5 +1,5 @@
 //
-//  ProductDetailsViewController.swift
+//  WebViewViewController.swift
 //  AbodeifCheck24
 //
 //  Created by Ahmed Abodeif on 5/23/19.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import WebKit
 
-class ProductDetailsViewController: UIViewController, WKNavigationDelegate {
+class WebViewViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
     
@@ -30,30 +29,12 @@ class ProductDetailsViewController: UIViewController, WKNavigationDelegate {
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         toolbarItems = [refresh]
         navigationController?.isToolbarHidden = false
-
+        
         // Do any additional setup after loading the view.
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func didTapFooter(_ sender: Any) {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
 }
