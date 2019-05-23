@@ -14,6 +14,7 @@ class ProductListTableViewController: UITableViewController {
     // The identifiers below must have the same name as nib names in Component/ProductListTable
     let productCellIdentifier = "ProductTableViewCell"
     let favoriteProductCellIdentifer = "FavoriteProductTableViewCell"
+    let filterHeaderViewIdentifier = "ProductListFilterHeader"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ProductListTableViewController: UITableViewController {
     func registerTableViewCells() {
         self.tableView.register(UINib(nibName: productCellIdentifier, bundle: nil), forCellReuseIdentifier: productCellIdentifier)
         self.tableView.register(UINib(nibName: favoriteProductCellIdentifer, bundle: nil), forCellReuseIdentifier: favoriteProductCellIdentifer)
+        self.tableView.register(UINib(nibName: filterHeaderViewIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: filterHeaderViewIdentifier)
     }
     
     // MARK: - Table view data source
@@ -53,6 +55,16 @@ class ProductListTableViewController: UITableViewController {
             return cell
         }
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: filterHeaderViewIdentifier) as! ProductListFilterHeader
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+   
  
 
     /*
